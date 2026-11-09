@@ -1,0 +1,35 @@
+# TravelMate-AI — Backend Dependencies
+# Pinned to exact installed versions for reproducible production builds on Render.
+#
+# Install (local dev, using the travelmate conda env):
+#   & "C:\Users\argha\anaconda3\envs\travelmate\python.exe" -m pip install -r requirements.txt
+
+# ── Web framework ─────────────────────────────────────────────
+fastapi==0.115.12
+uvicorn[standard]==0.34.3
+python-multipart==0.0.33
+
+# ── Data validation & settings ────────────────────────────────
+pydantic==2.11.4
+pydantic-settings==2.9.1
+
+# ── HTTP client (async, used by weather + maps services) ──────
+httpx==0.28.1
+
+# ── Rate limiting ─────────────────────────────────────────────
+slowapi==0.1.9
+
+# ── Environment variable loading (local dev) ──────────────────
+python-dotenv==1.1.0
+
+# ── IBM watsonx.ai SDK (Granite AI) ───────────────────────────
+# NOTE: 1.3.14 was yanked from PyPI; 1.9.1 is the latest stable release
+ibm-watsonx-ai==1.9.1
+
+# ── IBM Cloudant SDK ──────────────────────────────────────────
+# NOTE: 0.9.1 has a pkg_resources build error on Python 3.12; 0.11.13 is latest stable
+ibmcloudant==0.11.13
+
+# ── Testing ───────────────────────────────────────────────────
+pytest==8.4.0
+# httpx is already listed above — used by both the app and pytest TestClient

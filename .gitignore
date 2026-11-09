@@ -1,0 +1,53 @@
+# -- Python ----------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+env/
+venv/
+.venv/
+*.pyo
+
+# -- Environment / Secrets -------------------------------------
+# NEVER commit real .env files — use .env.example instead
+.env
+.env.local
+.env.production
+.env.staging
+backend/.env
+frontend/.env
+
+# -- Node / Frontend -------------------------------------------
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -- IDEs & OS -------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# -- Testing & Coverage ----------------------------------------
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+
+# -- Misc ------------------------------------------------------
+*.bak
+*.tmp

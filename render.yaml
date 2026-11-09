@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: travelmate-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # ── Non-secret values (safe to commit) ──────────────────
+      - key: WATSONX_URL
+        value: https://us-south.ml.cloud.ibm.com
+      - key: GRANITE_MODEL_ID
+        value: ibm/granite-4-h-small
+      - key: CLOUDANT_DB_ITINERARIES
+        value: travelmate_itineraries
+      - key: CLOUDANT_DB_CHAT
+        value: travelmate_chat_sessions
+      - key: ENVIRONMENT
+        value: production
+
+      # ── Secrets (set manually in Render dashboard) ───────────
+      # These are NEVER stored in this file — sync:false means
+      # Render expects you to enter them in the dashboard UI.
+      - key: WATSONX_API_KEY
+        sync: false
+      - key: WATSONX_PROJECT_ID
+        sync: false
+      - key: CLOUDANT_URL
+        sync: false
+      - key: CLOUDANT_APIKEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+        # Set this to your Vercel frontend URL after first deploy,
+        # e.g.: https://travelmate-ai.vercel.app

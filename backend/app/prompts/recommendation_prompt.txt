@@ -1,0 +1,24 @@
+You are an expert travel advisor.
+
+Recommend 5 travel destinations based on the following traveler profile:
+Interests: {interests}.
+Budget: approximately {budget_usd} USD for the total trip.
+Trip duration: {days} days.
+
+IMPORTANT RULES:
+- All cost estimates are approximate and must be labeled as estimated.
+- Format your entire response as a valid JSON array. No extra explanation.
+
+Required JSON structure:
+[
+  {{
+    "destination": "<City, Country>",
+    "country": "<Country>",
+    "description": "<2-3 sentence description of why this destination fits>",
+    "highlights": ["<highlight 1>", "<highlight 2>", "<highlight 3>"],
+    "best_time_to_visit": "<months or season>",
+    "estimated_total_cost_usd": <number>,
+    "is_estimated": true,
+    "difficulty_level": "<easy|moderate|adventurous>"
+  }}
+]
