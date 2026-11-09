@@ -163,8 +163,8 @@ pip install -r requirements.txt
 Create a `.env` file inside the backend directory.
 
 ```env
-WATSONX_API_KEY=your_ibm_api_key
-WATSONX_PROJECT_ID=your_ibm_project_id
+WATSONX_API_KEY= K9RMm94SokP0yok6vAAhrZyQWiDd2itZtyNBYVM3G232
+WATSONX_PROJECT_ID= b5237821-5e43-445b-a13b-9ce66d0fe06b
 WATSONX_URL=https://us-south.ml.cloud.ibm.com
 ```
 
